@@ -5,7 +5,7 @@ window.addEventListener('NEOLine.N3.EVENT.READY', () => {
             if (event.code !== "Enter") return;
             const url = new URL(event.target.value);
             if (url.protocol !== "n3:") throw 'protocol must be n3!';
-            const [_0, _1, sender, _3, scopes, scripthash, method] = url.pathname.match(new RegExp('^//((.*)(:(.*))?@)?([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$'));
+            const [_0, _1, sender, _3, scopes, scripthash, method] = url.pathname.match(new RegExp('^//(([a-zA-Z0-9]+)(:(.*))?@)?([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$'));
             const ret = await neolineN3.invokeRead({
                 scriptHash: scripthash,
                 operation: method,
