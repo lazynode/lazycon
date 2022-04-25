@@ -8,10 +8,8 @@
 	</body>
 	<script>
             document.getElementById("cmd").addEventListener("keypress", e => {
-		    console.log(e);
-		alert(JSON.stringify(e))
                 try {
-                    if (e.code !== "Enter") return;
+                    if (e.key !== "Enter") return;
                     const url = new URL(e.target.value);
                     if (url.protocol !== "n3:") throw 'protocol must be n3!';
                     const [_0, _1, sender, _3, scopes, scripthash, method] = url.pathname.match(new RegExp('^//(([a-zA-Z0-9]+)(:(.*))?@)?([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$'));
