@@ -8,6 +8,7 @@
 	</body>
 	<script>
             document.getElementById("cmd").addEventListener("keypress", e => {
+		    console.log(e);
 		alert(JSON.stringify(e))
                 try {
                     if (e.code !== "Enter") return;
