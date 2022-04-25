@@ -3,11 +3,12 @@
 	<body>
 		<div id="container">
 			<h1 id="title">lazycon - neocli</h1>
-			<textarea id="cmd"></textarea>
+			<input id="cmd" />
 		</div>
 	</body>
 	<script>
-            document.getElementById("cmd").addEventListener("keyup", e => {
+            document.getElementById("cmd").addEventListener("keypress", e => {
+		alert(JSON.stringify(e))
                 try {
                     if (e.code !== "Enter") return;
                     const url = new URL(e.target.value);
