@@ -10,7 +10,7 @@ window.addEventListener('NEOLine.N3.EVENT.READY', () => {
                 scriptHash: scripthash,
                 operation: method,
                 args: [...url.searchParams].map(([k, v]) => ({ type: k, value: v })),
-                signers: [{account: signer ?? await neolineN3.getAccount(), scopes: scopes?parseInt(scpoes):1}],
+                signers: [{account: sender ?? await neolineN3.getAccount(), scopes: scopes?parseInt(scpoes):1}],
             });
             alert(JSON.stringify(ret));
         } catch (err) {
