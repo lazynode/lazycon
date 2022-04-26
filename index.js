@@ -12,7 +12,7 @@ window.addEventListener('NEOLine.N3.EVENT.READY', () => {
                 args: [...url.searchParams].map(([k, v]) => ({ type: k, value: v })),
                 signers: [{account: sender ?? (await neolineN3.getAccount()).address, scopes: scopes?parseInt(scopes):1}],
             });
-            alert(JSON.stringify(ret));
+            document.getElementById("result").innerText = JSON.stringify(ret, null, 2);
         } catch (err) {
             console.log(err);
             alert(err);

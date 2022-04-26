@@ -24,6 +24,11 @@ body {
 	font: 16px Arial;
 	padding: 15px 20px;
 }
+#result {
+	width: 66%;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
 #button {
 	display: flex;
 	justify-content: space-evenly;

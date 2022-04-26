@@ -4,6 +4,8 @@
 		<div id="container">
 			<h1 id="title">lazycon - neocli</h1>
 			<input id="cmd" autocomplete="on"/>
+			<code id="hint"></code>
+			<code id="result"></code>
 		</div>
 	</body>
 	<script>
@@ -13,7 +15,7 @@
                     const url = new URL(e.target.value);
                     if (url.protocol !== "n3:") throw 'protocol must be n3!';
                     const [_0, _1, sender, _3, scopes, scripthash, method] = url.pathname.match(new RegExp('^//(([a-zA-Z0-9]+)(:(.*))?@)?([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$'));
-                    alert(`invoke ${scripthash} ${method} ${JSON.stringify([...url.searchParams].map(([k, v]) => ({ type: k, value: v })))}` + (sender ? ` ${sender} ${sender}` : ''));
+                    document.getElementById("result").innerText = `invoke ${scripthash} ${method} ${JSON.stringify([...url.searchParams].map(([k, v]) => ({ type: k, value: v })))}` + (sender ? ` ${sender} ${sender}` : '');
                 } catch (err) {
                     alert(JSON.stringify(err));
                 }
