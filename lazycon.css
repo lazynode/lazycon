@@ -16,13 +16,18 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-#exec {
+#exec, #cmd {
 	width: 66%;
 	height: 50px;
 	border: #20bf6b 1px solid;
 	border-radius: 6px;
 	font: 16px Arial;
 	padding: 15px 20px;
+}
+#result {
+	width: 66%;
+	white-space: pre-wrap;
+	word-break: break-all;
 }
 #button {
 	display: flex;
