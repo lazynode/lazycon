@@ -16,7 +16,7 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-#exec {
+#exec, #cmd {
 	width: 66%;
 	height: 50px;
 	border: #20bf6b 1px solid;
